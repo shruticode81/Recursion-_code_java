@@ -41,9 +41,25 @@ public class CheckSorted{
 		return answer;
 		
 	}
+
+	private static boolean checkSortedBetter(int input[],int startIndex){
+		//basecase will then there is one element left or no element left 
+		if(startIndex>=input.length-1){
+			return true;
+		}
+		if(input[startIndex]>input[startIndex+1]){
+			return false;
+		}
+		boolean smallans = checkSortedBetter(input,startIndex+1); // input[] array will be the same
+		return smallans;
+	}
+
+	public static boolean checkSortedBetter(int input[]){ //we are doing function overloading here. as user donot know about startindex
+		return checkSortedBetter(input,0);
+	}
 	public static void main(String[] args){
 		int arr[] = {1,61,2,3};
-		boolean ans = check2(arr);
+		boolean ans = checkSortedBetter(arr);
 		System.out.println(ans);
 	}
 }
