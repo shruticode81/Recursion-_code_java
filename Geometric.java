@@ -9,12 +9,15 @@ public class Geometric{
 		}
 		double smallans = geometricSum(k-1);
 		double sum = smallans+1/Math.pow(2,k);
+		//float f = (float)sum;
 		return sum;
 	}
 	public static void main(String[] args){
 		Scanner s = new Scanner(System.in);
 		int k = s.nextInt();
 		double res = geometricSum(k);
-		System.out.println(res);
+		//float f = (float)res;
+		//System.out.println(String.format("%.5f",res)); //both prnt statements are correct
+		System.out.prntf("%.5f"res);
 	}
 }
